@@ -5,6 +5,7 @@
   "keywords": [
     "zork"
   ],
+  "homepage": "https://github.com/dprothero/zorkjs#readme",
   "main": "zork.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
