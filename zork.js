@@ -53,7 +53,6 @@ const runZork = function(datFile) {
 };
 
 const launchZork = function() {
-  console.log(tmpdir);
   const datFile = path.join(tmpdir, 'ZORK1.DAT');
   if (!fs.existsSync(datFile)) {
     getZorkDat(err => {
