@@ -3,7 +3,6 @@ const fs = require('fs');
 const tmpdir = require('os').tmpdir();
 const path = require('path');
 const AdmZip = require('adm-zip');
-const GlkOte = require('glkote-term');
 const ZVM = require('ifvms').ZVM;
 
 const download = function(url, dest, cb) {
@@ -36,6 +35,8 @@ const getZorkDat = function(cb) {
 };
 
 const runZork = function(datFile) {
+  const GlkOte = require('glkote-term');
+
   const vm = new ZVM();
   const Glk = GlkOte.Glk;
 
