@@ -5,6 +5,6 @@ Downloads and runs Zork as a node app.
 ## Usage
 
 ```js
-var launchZork = require('zorkjs');
+const launchZork = require("zorkjs");
 launchZork();
 ```
