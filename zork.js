@@ -4,6 +4,8 @@ const tmpdir = require('os').tmpdir();
 const path = require('path');
 const AdmZip = require('adm-zip');
 const ZVM = require('ifvms').ZVM;
+const readline = require('readline');
+const MuteStream = require('mute-stream');
 
 const download = function(url, dest, cb) {
   const file = fs.createWriteStream(dest);
@@ -40,11 +42,26 @@ const runZork = function(datFile) {
   const vm = new ZVM();
   const Glk = GlkOte.Glk;
 
+    // Readline options
+    const stdin = process.stdin;
+    const stdout = new MuteStream();
+    stdout.pipe(process.stdout);
+    const rl = readline.createInterface({
+      input: stdin,
+      output: stdout,
+      prompt: ''
+    });
+    const rl_opts = {
+      rl: rl,
+      stdin: stdin,
+      stdout: stdout
+    };
+  
   const options = {
     vm: vm,
-    Dialog: new GlkOte.Dialog(),
+    Dialog: new GlkOte.Dialog(rl_opts),
     Glk: Glk,
-    GlkOte: new GlkOte()
+    GlkOte: new GlkOte(rl_opts)
   };
 
   vm.prepare(fs.readFileSync(datFile), options);

@@ -1,6 +1,6 @@
 {
   "name": "zorkjs",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Downloads and runs Zork as a node app.",
   "keywords": [
     "zork"
@@ -15,7 +15,7 @@
   "license": "MIT",
   "dependencies": {
     "adm-zip": "^0.4.13",
-    "ifvms": "^1.1.3"
+    "ifvms": "^1.1.4"
   },
   "files": [
     "zork.js",
