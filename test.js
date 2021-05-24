@@ -14,6 +14,7 @@ const timer = setTimeout(() => {
 }, 20000);
 
 const expectedStrings = [
+  "ZORK I: The Great Underground Empire",
   "There is a small mailbox here",
   "Opening the small mailbox reveals a leaflet",
   "Do you wish to leave the game",
